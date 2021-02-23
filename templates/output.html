@@ -1,0 +1,84 @@
+<head>
+  <title>Output</title>
+  <link
+    rel="icon"
+    href="{{ url_for('static',filename='images/favicon.png') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static',filename='css/styles.css') }}"
+  />
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <form action="/">
+    <div class="main">
+      <div class="sentiment">
+        <h2 id="positive" style="color: green">{{Positive}}</h2>
+        <h2 id="negative" style="color: red">{{Negative}}</h2>
+        <h2 id="neutral" style="color: yellow">{{Neutral}}</h2>
+      </div>
+      <h6 id="overall" style="text-align: inherit">Overall rating:</h6>
+      <image
+        src="{{ url_for('static',filename='images/graph.png') }}"
+        alt="graph"
+        width="400px"
+        height="350px"
+      />
+      <div class="back">
+        <button onclick="location.href='/'" type="button" class="btn btn-info">
+          Go Back
+        </button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="loadingAnimation">
+        <svg class="pet1" width="100" height="100" viewBox="-12 -12 100 100">
+          <path
+            class="petal-1"
+            d="M16.3 37.65Q-12.457227 28.917383 9.525 8.425 31.473633 -12.042188 38.225 17.2 45.033398 46.443555 16.3 37.65"
+          ></path>
+        </svg>
+        <svg class="pet2" width="100" height="100" viewBox="-12 -12 100 100">
+          <path
+            class="petal-2"
+            d="M46.075 20.125Q68.475391 0.18730469 74.6 29.55 80.694141 58.914453 52.175 49.525 23.664844 40.082617 46.075 20.125"
+          ></path>
+        </svg>
+        <svg class="pet3" width="100" height="100" viewBox="-12 -12 100 100">
+          <path
+            class="petal-3"
+            d="M49.45 56.45Q56.604102 85.581641 27.775 77.25 -1.0511719 68.885742 20.575 48.1 42.24668 27.332227 49.45 56.45"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
+    <script>
+      $(window).on("load", function () {
+        $(".loadingAnimation").fadeOut("slow");
+        console.log("here");
+      });
+    </script>
+  </form>
+</body>
